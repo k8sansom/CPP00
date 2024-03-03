@@ -1,32 +1,30 @@
-NAME = 
+# Target executable name
+NAME = megaphone
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+# Compiler and compiler flags
+CXX = g++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 
-# Source dir and files
-SRC_DIR = src
-SRCS =	
+# Source files
+SRCS = megaphone.cpp
 
 # Object files
-OBJ_DIR = obj
-OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJS = $(SRCS:.cpp=.o)
 
 # Default target (all)
 all: $(NAME)
 
 # Linking the program
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 # Compilation rule for object files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-# Clean object files and executable
+# Clean object files
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJS)
 
 # Remove all generated files
 fclean: clean
