@@ -5,16 +5,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Source dir and files
 SRC_DIR = src
-SRCS =	src/eating.c \
-		src/init.c \
-		src/main.c \
-		src/monitors.c \
-		src/routines.c \
-		src/utils_get.c \
-		src/utils_print.c \
-		src/utils_set.c \
-		src/utils_time.c \
-		src/utils.c 
+SRCS =	
 
 # Object files
 OBJ_DIR = obj
