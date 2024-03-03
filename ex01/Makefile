@@ -2,8 +2,8 @@
 NAME = megaphone
 
 # Compiler and compiler flags
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+CXX = g++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 # Source files
 SRCS = megaphone.cpp
@@ -16,11 +16,11 @@ all: $(NAME)
 
 # Linking the program
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 # Compilation rule for object files
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Clean object files
 clean:
