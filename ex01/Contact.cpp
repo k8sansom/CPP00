@@ -1,8 +1,16 @@
 #include "Contact.hpp"
 
-Contact::Contact{}
+Contact::Contact(void)
+{
+	std::cout << "Constructor called" << std::endl;
+	return ;
+}
 
-Contact::~Contact{}
+Contact::~Contact(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	return ;
+}
 
 std::string	Contact::_getInput(std::string str) const
 {

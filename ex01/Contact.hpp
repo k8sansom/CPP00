@@ -23,16 +23,4 @@ public:
 	void	display(int index) const;
 	void	setIndex(int i);
 };
-
-Contact::Contact(void)
-{
-	std::cout << "Constructor called" << std::endl;
-	return ;
-}
-
-Contact::~Contact(void)
-{
-	std::cout << "Destructor called" << std::endl;
-	return ;
-}
 #endif
