@@ -31,7 +31,7 @@ int     PhoneBook::_read_input() const {
 void    PhoneBook::add(void) {
 	static int	i;
 	this->_contacts_arr[i % 8].add();
-	this->_contacts_arr[i % 8].set_index(i + 1 % 9);
+	this->_contacts_arr[i % 8].index = i + 1 % 9;
 	i++;
 }
 

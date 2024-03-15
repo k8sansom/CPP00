@@ -59,7 +59,3 @@ void	Contact::display(int index) const {
     std::cout << "last name: " << this->_last_name << std::endl;
     std::cout << "nickname: " << this->_nickname << std::endl;
 }
-
-void	Contact::set_index(int i) {
-	this->_index = i;
-}
