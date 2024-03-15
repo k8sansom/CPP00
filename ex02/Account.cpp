@@ -7,17 +7,22 @@ int	_accountIndex = 0;
 int	_amount = 0;
 int	_nbDeposits = 0;
 int	_nbWithdrawals = 0;
-int	_nbAccounts = 0;
-int	_totalAmount = 0;
-int	_totalNbDeposits = 0;
-int	_totalNbWithdrawals = 0;
+//The variables _nbAccounts, _totalAmount, _totalNbDeposits, and _totalNbWithdrawals 
+//are intended to represent global state across all instances of the Account class. 
+//By making them static member variables of the Account class, you ensure that there is 
+//only one copy of each variable shared among all instances of the Account class 
+//and with the class itself
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 Account::Account( int initial_deposit ) {
     this->_displayTimestamp();
 	_amount = initial_deposit;
     _totalAmount += _amount;
+    _accountIndex = _nbAccounts;
 	_nbAccounts++;
-    _accountIndex = _nbAccounts -1;
     _nbDeposits = 0;
     _nbWithdrawals = 0;
     std::cout << "index:" << _accountIndex << ";"
@@ -25,8 +30,8 @@ Account::Account( int initial_deposit ) {
               << "created" << std::endl;
 }
 
-Account::~Account( void ){
-    _nbAccounts--;
+Account::~Account( void ) {
+    //_nbAccounts--;
     this->_displayTimestamp();
     std::cout << "index:" << _accountIndex << ";"
                 << "amount:" << _amount << ";"
