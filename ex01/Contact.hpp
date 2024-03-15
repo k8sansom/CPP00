@@ -1,6 +1,7 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+#include <limits>
 #include <iostream>
 #include <iomanip>
 
@@ -18,8 +19,8 @@ private:
 public:
 	Contact();
 	~Contact();
-	void	init(void);
-	void	view(int index) const;
+	void	add(void);
+	void	print(int index) const;
 	void	display(int index) const;
 	void	set_index(int i);
 };

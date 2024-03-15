@@ -6,13 +6,13 @@
 class PhoneBook
 {
     private:
-        Contact _contacts[8];
+        Contact _contacts_arr[8];
         int     _read_input(void) const;
     public:
         PhoneBook();
         ~PhoneBook();
         void    add(void);
-        void    print(void) const;
+        void    print_phonebook(void) const;
         void    search(void) const;
         void    welcome(void) const;
 };
