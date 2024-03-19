@@ -1,16 +1,8 @@
 #include "Contact.hpp"
 
-Contact::Contact(void)
-{
-	// std::cout << "Constructor called" << std::endl;
-	// return ;
-}
+Contact::Contact(void) {}
 
-Contact::~Contact(void)
-{
-	// std::cout << "Destructor called" << std::endl;
-	// return ;
-}
+Contact::~Contact(void) {}
 
 std::string	Contact::_get_input(std::string str) const {
 	std::string	input= "";
@@ -54,9 +46,6 @@ void	Contact::print(int index) const {
 }
 
 void	Contact::print_contact() const {
-	if (this->_first_name.empty())
-		return ;
-    //std::cout << "contact: " << index << std::endl;
     std::cout << "first name: " << this->_first_name << std::endl;
     std::cout << "last name: " << this->_last_name << std::endl;
     std::cout << "nickname: " << this->_nickname << std::endl;

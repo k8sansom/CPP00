@@ -103,6 +103,11 @@ void	Account::displayStatus( void ) const {
 }
 
 void	Account::_displayTimestamp( void ) {
-	time_t	present = time(NULL);
-    std::cout << std::put_time(localtime(&present), "[%Y%m%d_%H%M%S] ");
+	std::time_t	present = std::time(NULL);
+	std::tm* local_time = std::localtime(&present);
+	char buffer[80];
+
+	std::strftime(buffer, 80, "[%Y%m%d_%H%M%S] ", local_time);
+	std::cout << buffer;
+    //std::cout << std::put_time(localtime(&present), "[%Y%m%d_%H%M%S] ");
 }

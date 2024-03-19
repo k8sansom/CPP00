@@ -8,10 +8,7 @@ PhoneBook::PhoneBook(){
     std::cout << "EXIT\\n		-->will quit the PhoneBook." << std::endl;
 }
 
-PhoneBook::~PhoneBook(){
-	// std::cout << "Destructor called" << std::endl;
-	// return ;
-}
+PhoneBook::~PhoneBook() {}
 
 void    PhoneBook::add(void) {
 	static int	i;
