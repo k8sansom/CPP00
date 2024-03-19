@@ -17,6 +17,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <ios>
 
 class Contact
 {
@@ -31,7 +32,7 @@ class Contact
 		Contact();
 		~Contact();
 		int		index;
-		void	add(void);
+		int		add(void);
 		void	print(int index) const;
 		void	print_contact() const;
 };

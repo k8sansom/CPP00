@@ -22,15 +22,17 @@ PhoneBook::PhoneBook(){
 
 PhoneBook::~PhoneBook() {}
 
-void   PhoneBook::add(void) {
+int   PhoneBook::add(void) {
 	static int	i;
 
-	this->_contacts_arr[i % 8].add();
+	if (this->_contacts_arr[i % 8].add() != 0)
+		return 1;
 	this->_contacts_arr[i % 8].index = i + 1 % 9;
 	i++;
+	return 0;
 }
 
-void    PhoneBook::search(void) const {
+int    PhoneBook::search(void) const {
 	int     index = -1;
     bool    valid = false;
 
@@ -42,15 +44,19 @@ void    PhoneBook::search(void) const {
 		std::cin >> index;
 		if (std::cin.good() && (index >= 1 && index <= 8))
 			valid = true;
-		else if (std::cin.eof())
-			exit (1);
+		else if (std::cin.eof()) {
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			return (1);
+		}
         else {
 			std::cin.clear();
-			std::cin.ignore(2000, '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "Invalid index, try again" << std::endl;
 		}
     }
 	this->_contacts_arr[index - 1].print_contact();
+	return 0;
 }
 
 

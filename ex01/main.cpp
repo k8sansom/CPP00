@@ -15,13 +15,17 @@
 int main(void){
     PhoneBook pbook;
     std::string input= "";
-    while (input.compare("EXIT")){
-		std::cout << "What would you like to do?> ";
+    while (input.compare("EXIT")) {
+		std::cout << "What would you like to do?> " << std::flush;
 		std::cin >> input;
-		if (input.compare("ADD") == 0)
-			pbook.add();
-        else if(input.compare("SEARCH") == 0)
-			pbook.search();
+		if (input.compare("ADD") == 0) {
+ 			if (pbook.add() != 0)
+				return 1;
+		}
+    	else if(input.compare("SEARCH") == 0) {
+			if (pbook.search() != 0)
+				return 1;
+		}
 		else if (std::cin.eof())
 			return 1;
     }

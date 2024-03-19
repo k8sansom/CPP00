@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "PhoneBook.hpp"
 
 Contact::Contact(void) {}
 
@@ -26,21 +25,37 @@ std::string	Contact::_get_input(std::string str) const {
 		std::getline(std::cin, input);
 		if (std::cin.good() && !input.empty())
 			valid = true;
-		else if (std::cin.eof())
-			exit (1);
-		else
+		else if (std::cin.eof()) {
 			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			return ("");
+		}
+		else {
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
 	}
 	return (input);
 }
 
-void	Contact::add(void) {
+int	Contact::add(void) {
 	std::cin.ignore();
 	this->_first_name = this->_get_input("First name: ");
+	if (this->_first_name.empty())
+		return 1;
     this->_last_name = this->_get_input("Last name: ");
+	if (this->_last_name.empty())
+		return 1;
     this->_nickname = this->_get_input("Nickname: ");
+	if (this->_nickname.empty())
+		return 1;
     this->_phone_number = this->_get_input("Phone number: ");
+	if (this->_phone_number.empty())
+		return 1;
     this->_darkest_secret = this->_get_input("Darkest secret: ");
+	if (this->_darkest_secret.empty())
+		return 1;
+	return 0;
 }
 
 void	Contact::print(int index) const {

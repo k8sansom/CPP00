@@ -22,7 +22,7 @@ class PhoneBook
     public:
         PhoneBook();
         ~PhoneBook();
-        void    add(void);
-        void    search(void) const;
+        int    add(void);
+        int    search(void) const;
 };
 #endif
