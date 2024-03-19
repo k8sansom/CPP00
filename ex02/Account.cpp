@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 10:14:38 by ksansom           #+#    #+#             */
+/*   Updated: 2024/03/19 10:14:42 by ksansom          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <ctime>
 #include <iostream>
@@ -105,9 +117,8 @@ void	Account::displayStatus( void ) const {
 void	Account::_displayTimestamp( void ) {
 	std::time_t	present = std::time(NULL);
 	std::tm* local_time = std::localtime(&present);
-	char buffer[80];
+	char buffer[19];
 
-	std::strftime(buffer, 80, "[%Y%m%d_%H%M%S] ", local_time);
+	std::strftime(buffer, 19, "[%Y%m%d_%H%M%S] ", local_time);
 	std::cout << buffer;
-    //std::cout << std::put_time(localtime(&present), "[%Y%m%d_%H%M%S] ");
 }
