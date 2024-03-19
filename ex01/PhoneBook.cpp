@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:15:27 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 13:10:39 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/19 15:58:12 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PhoneBook::PhoneBook(){
 
 PhoneBook::~PhoneBook() {}
 
-void    PhoneBook::add(void) {
+void   PhoneBook::add(void) {
 	static int	i;
 
 	this->_contacts_arr[i % 8].add();

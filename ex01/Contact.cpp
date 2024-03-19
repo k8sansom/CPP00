@@ -6,11 +6,12 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:16:01 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 12:43:20 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/19 16:02:03 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 Contact::Contact(void) {}
 
