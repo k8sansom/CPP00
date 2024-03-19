@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:15:27 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 10:15:28 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/19 12:45:03 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,15 @@ void    PhoneBook::search(void) const {
 		this->_contacts_arr[i].print(i + 1);
     while (!valid)
     {
-		std::cout << "Index: ";
+		std::cout << "Index: " <<std::flush;
 		std::cin >> index;
-		if (index > 0 && index < 9)
+		if (std::cin.good() && (index >= 1 && index <= 8))
 			valid = true;
+		else if (std::cin.eof())
+			exit (1);
         else {
 			std::cin.clear();
-			index = -1;
+			std::cin.ignore(2000,'\n');
 			std::cout << "Invalid index, try again" << std::endl;
 		}
     }

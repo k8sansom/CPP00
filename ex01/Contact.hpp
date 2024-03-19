@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:15:35 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 10:15:36 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/19 12:42:46 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <limits>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 class Contact
 {

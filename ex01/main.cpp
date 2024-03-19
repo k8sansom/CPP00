@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:16:09 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 10:16:10 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/19 12:39:42 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main(void){
 			pbook.add();
         else if(input.compare("SEARCH") == 0)
 			pbook.search();
+		else if (std::cin.eof())
+			return 1;
     }
     return 0;
 }

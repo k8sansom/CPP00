@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:16:01 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 10:16:02 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/19 12:43:20 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ std::string	Contact::_get_input(std::string str) const {
 	bool		valid= false;
 
 	while(!valid) {
-		std::cout << str;
+		std::cout << str << std::flush;
 		std::getline(std::cin, input);
-		if (!input.empty())
+		if (std::cin.good() && !input.empty())
 			valid = true;
+		else if (std::cin.eof())
+			exit (1);
 		else
 			std::cin.clear();
 	}
@@ -61,4 +63,6 @@ void	Contact::print_contact() const {
     std::cout << "first name: " << this->_first_name << std::endl;
     std::cout << "last name: " << this->_last_name << std::endl;
     std::cout << "nickname: " << this->_nickname << std::endl;
+	std::cout << "phone number: " << this->_phone_number << std::endl;
+	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
 }
