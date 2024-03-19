@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:15:27 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 12:45:03 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/19 13:10:39 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void    PhoneBook::search(void) const {
 			exit (1);
         else {
 			std::cin.clear();
-			std::cin.ignore(2000,'\n');
+			std::cin.ignore(2000, '\n');
 			std::cout << "Invalid index, try again" << std::endl;
 		}
     }
