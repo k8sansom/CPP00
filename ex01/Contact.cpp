@@ -75,6 +75,8 @@ void	Contact::print(int index) const {
 }
 
 void	Contact::print_contact() const {
+	if (this->_first_name.empty())
+		return ;
     std::cout << "first name: " << this->_first_name << std::endl;
     std::cout << "last name: " << this->_last_name << std::endl;
     std::cout << "nickname: " << this->_nickname << std::endl;

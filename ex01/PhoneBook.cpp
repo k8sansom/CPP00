@@ -32,34 +32,38 @@ int   PhoneBook::add(void) {
 	return 0;
 }
 
-int    PhoneBook::search(void) const {
-	int     index = -1;
-    bool    valid = false;
+int PhoneBook::search() const {
+    int index = -1;
+    std::string input = "";
 
     for (int i = 0; i < 8; i++)
-		this->_contacts_arr[i].print(i + 1);
-    while (!valid)
-    {
-		std::cout << "Index: " <<std::flush;
-		std::cin >> index;
-		if (std::cin.good() && (index >= 1 && index <= 8)) {
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			valid = true;
-		}
-		else if (std::cin.eof()) {
+        this->_contacts_arr[i].print(i + 1);
+
+    while (true) {
+        std::cout << "Index: ";
+        std::getline(std::cin, input);
+		if (std::cin.eof()) {
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			return 1;
-		}
-        else {
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Invalid index, try again" << std::endl;
-		}
+        }
+        try {
+			index = std::stoi(input);
+			if (index >= 1 && index <= 8)
+                break;
+            else
+                std::cout << "Invalid index, try again" << std::endl;
+        } 
+		catch (const std::invalid_argument&) {
+            std::cout << "Invalid input, try again" << std::endl;
+        } 
+		catch (const std::out_of_range&) {
+            std::cout << "Invalid input, try again" << std::endl;
+        }
+		std::cin.clear();
     }
-	this->_contacts_arr[index - 1].print_contact();
-	return 0;
+    this->_contacts_arr[index - 1].print_contact();
+    return 0;
 }
 
 
