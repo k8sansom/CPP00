@@ -42,12 +42,15 @@ int    PhoneBook::search(void) const {
     {
 		std::cout << "Index: " <<std::flush;
 		std::cin >> index;
-		if (std::cin.good() && (index >= 1 && index <= 8))
+		if (std::cin.good() && (index >= 1 && index <= 8)) {
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			valid = true;
+		}
 		else if (std::cin.eof()) {
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			return (1);
+			return 1;
 		}
         else {
 			std::cin.clear();

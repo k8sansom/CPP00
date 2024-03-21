@@ -39,7 +39,6 @@ std::string	Contact::_get_input(std::string str) const {
 }
 
 int	Contact::add(void) {
-	std::cin.ignore();
 	this->_first_name = this->_get_input("First name: ");
 	if (this->_first_name.empty())
 		return 1;
