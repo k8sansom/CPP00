@@ -15,11 +15,7 @@
 #include <iostream>
 #include <iomanip>
 
-//The variables _nbAccounts, _totalAmount, _totalNbDeposits, and _totalNbWithdrawals 
-//are intended to represent global state across all instances of the Account class. 
-//By making them static member variables of the Account class, you ensure that there is 
-//only one copy of each variable shared among all instances of the Account class 
-//and with the class itself
+//These are global states across all instances of the Account class
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;

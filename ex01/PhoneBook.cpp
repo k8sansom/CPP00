@@ -38,7 +38,6 @@ int PhoneBook::search() const {
 
     for (int i = 0; i < 8; i++)
         this->_contacts_arr[i].print(i + 1);
-
     while (true) {
         std::cout << "Index: ";
         std::getline(std::cin, input);
@@ -65,5 +64,3 @@ int PhoneBook::search() const {
     this->_contacts_arr[index - 1].print_contact();
     return 0;
 }
-
-
