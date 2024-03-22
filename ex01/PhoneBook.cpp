@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:15:27 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/22 09:52:35 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/22 10:12:35 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int   PhoneBook::add(void) {
 }
 
 int PhoneBook::search() const {
-    int index = -1;
+    int index = 0;
     std::string input = "";
 
     for (int i = 0; i < 8; i++)
@@ -46,9 +46,9 @@ int PhoneBook::search() const {
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			return 1;
         }
-     std::istringstream iss(input);
-        if (!(iss >> index))
-            std::cout << "Invalid input, try again" << std::endl;
+		std::istringstream iss(input);
+		if (!(iss >> index))
+			std::cout << "Invalid input, try again" << std::endl;
         else if (index >= 1 && index <= 8) 
 			break ;
 		else
