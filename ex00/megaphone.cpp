@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:15:17 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 13:01:39 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/22 09:42:47 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	int	j = -1;
+	int	j;
 	if (ac < 2)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	for (int i = 1; av[i]; i++)
