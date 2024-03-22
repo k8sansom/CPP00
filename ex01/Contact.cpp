@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:16:01 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 16:02:03 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/22 10:07:47 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,19 @@ Contact::~Contact(void) {}
 
 std::string	Contact::_get_input(std::string str) const {
 	std::string	input= "";
-	bool		valid= false;
 
-	while(!valid) {
+	while(true) {
 		std::cout << str << std::flush;
 		std::getline(std::cin, input);
 		if (std::cin.good() && !input.empty())
-			valid = true;
+			break ;
 		else if (std::cin.eof()) {
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			return ("");
 		}
-		else {
+		else 
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
 	}
 	return (input);
 }

@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:16:09 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 15:58:54 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/22 09:58:34 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,23 @@ int main() {
         std::cout << "What would you like to do?> ";
         std::getline(std::cin, input);
         if (input.compare("ADD") == 0) {
-            if (pbook.add() != 0)
+            if (pbook.add() != 0) {
+				std::cout << std::endl;
                 return 1;
+			}
         } 
 		else if (input.compare("SEARCH") == 0) {
-            if (pbook.search() != 0)
+            if (pbook.search() != 0) {
+				std::cout << std::endl;
                 return 1;
-        }
+        	}
+		}
 		else if (input.compare("EXIT") == 0)
             break;
 		else if (std::cin.eof()) {
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << std::endl;
 			return 1;
 		}
     }

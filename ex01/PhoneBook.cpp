@@ -6,7 +6,7 @@
 /*   By: ksansom <ksansom@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 10:15:27 by ksansom           #+#    #+#             */
-/*   Updated: 2024/03/19 15:58:12 by ksansom          ###   ########.fr       */
+/*   Updated: 2024/03/22 09:52:35 by ksansom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,13 @@ int PhoneBook::search() const {
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			return 1;
         }
-        try {
-			index = std::stoi(input);
-			if (index >= 1 && index <= 8)
-                break;
-            else
-                std::cout << "Invalid index, try again" << std::endl;
-        } 
-		catch (const std::invalid_argument&) {
+     std::istringstream iss(input);
+        if (!(iss >> index))
             std::cout << "Invalid input, try again" << std::endl;
-        } 
-		catch (const std::out_of_range&) {
-            std::cout << "Invalid input, try again" << std::endl;
-        }
+        else if (index >= 1 && index <= 8) 
+			break ;
+		else
+            std::cout << "Invalid index, try again" << std::endl;
 		std::cin.clear();
     }
     this->_contacts_arr[index - 1].print_contact();
